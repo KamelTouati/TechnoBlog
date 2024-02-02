@@ -1,13 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 const asyncHandler = require("express-async-handler");
-const {
-  Post,
-  validateCreatePost,
-} = require("../models/Post");
-const {
-  cloudinaryUploadImage,
-} = require("../utils/cloudinary");
+const { Post, validateCreatePost } = require("../models/Post");
+const { cloudinaryUploadImage } = require("../utils/cloudinary");
 const { Comment } = require("../models/Comment");
 
 /**-----------------------------------------------
@@ -51,4 +46,60 @@ module.exports.createPost = asyncHandler(async (req, res) => {
   fs.unlinkSync(imagePath);
 });
 
+/**-----------------------------------------------
+ * @desc    Get All Posts
+ * @route   /api/posts
+ * @method  GET
+ * @access  public
+ ------------------------------------------------*/
+module.exports.getAllPosts = asyncHandler(async (req, res) => {
+  const POST_PER_PAGE = 3;
+  const { pageNumber, category } = req.query;
+  let posts;
 
+  if (pageNumber) {
+    posts = await Post.find()
+      .skip((pageNumber - 1) * POST_PER_PAGE)
+      .limit(POST_PER_PAGE)
+      .sort({ createdAt: -1 })
+      .populate("user", ["-password"]);
+  } else if (category) {
+    posts = await Post.find({ category })
+      .sort({ createdAt: -1 })
+      .populate("user", ["-password"]);
+  } else {
+    posts = await Post.find()
+      .sort({ createdAt: -1 })
+      .populate("user", ["-password"]);
+  }
+  res.status(200).json(posts);
+});
+
+/**-----------------------------------------------
+ * @desc    Get Single Post
+ * @route   /api/posts/:id
+ * @method  GET
+ * @access  public
+ ------------------------------------------------*/
+module.exports.getSinglePost = asyncHandler(async (req, res) => {
+  const post = await Post.findById(req.params.id).populate("user", [
+    "-password",
+  ]);
+
+  if (!post) {
+    return res.status(404).json({ message: "post not found" });
+  }
+
+  res.status(200).json(post);
+});
+
+/**-----------------------------------------------
+ * @desc    Get Posts Count
+ * @route   /api/posts/count
+ * @method  GET
+ * @access  public
+ ------------------------------------------------*/
+module.exports.getPostCount = asyncHandler(async (req, res) => {
+  const count = await Post.count();
+  res.status(200).json(count);
+});
