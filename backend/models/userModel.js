@@ -78,4 +78,19 @@ function validateLoginUser(obj) {
   return schema.validate(obj);
 }
 
-module.exports = { User, validateRegisterUser, validateLoginUser };
+// Validate Update User
+function validateUpdateUser(obj) {
+    const schema = Joi.object({
+        username: Joi.string().trim().min(2).max(100),
+        password: passwordComplexity(),
+        bio: Joi.string(),
+    });
+    return schema.validate(obj);
+}
+
+module.exports = {
+  User,
+  validateRegisterUser,
+  validateLoginUser,
+  validateUpdateUser,
+};

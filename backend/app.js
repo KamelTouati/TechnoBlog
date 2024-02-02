@@ -3,7 +3,6 @@ const cors = require("cors");
 const connectDB = require("./config/db");
 const colors = require("colors");
 const dotenv = require("dotenv").config();
-const { errorHandler } = require("./middleware/errorMiddleware");
 const app = express();
 
 connectDB();
@@ -24,7 +23,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/users", require("./routes/usersRoutes"));
 
-app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
