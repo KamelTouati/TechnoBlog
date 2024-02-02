@@ -1,9 +1,11 @@
 const asyncHandler = require("express-async-handler");
 const { User } = require("../models/userModel");
+const fs = require("fs");
 const {
   cloudinaryUploadImage,
   cloudinaryRemoveImage,
 } = require("../utils/cloudinary");
+
 /**-----------------------------------------------
  * @desc    Get All Users Profile
  * @route   /api/users/profile
@@ -115,4 +117,29 @@ module.exports.profilePhotoUpload = asyncHandler(async (req, res) => {
 
   // 8. Remvoe image from the server
   fs.unlinkSync(imagePath);
+});
+
+/**-----------------------------------------------
+ * @desc    Delete User Profile (Account)
+ * @route   /api/users/profile/:id
+ * @method  DELETE
+ * @access  private (only admin or user himself)
+ ------------------------------------------------*/
+module.exports.deleteUserProfile = asyncHandler(async (req, res) => {
+  // 1. Get the user from DB
+  const user = await User.findById(req.params.id);
+  if (!user) {
+    return res.status(404).json({ message: "user not found" });
+  }
+
+  // 5. Delete the profile picture from cloudinary
+  if (user.profilePhoto.publicId !== null) {
+    await cloudinaryRemoveImage(user.profilePhoto.publicId);
+  }
+
+  // 7. Delete the user himself
+  await User.findByIdAndDelete(req.params.id);
+
+  // 8. Send a response to the client
+  res.status(200).json({ message: "your profile has been deleted" });
 });

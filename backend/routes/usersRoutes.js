@@ -5,6 +5,7 @@ const {
   updateUserProfile,
   getUsersCount,
   profilePhotoUpload,
+  deleteUserProfile,
 } = require("../controllers/usersController");
 const {
   verifyToken,
@@ -25,6 +26,7 @@ router
 router
   .route("/profile/:id")
   .get(validateObjectId, getUserProfile)
-  .put(validateObjectId, verifyTokenAndOnlyUser, updateUserProfile);
+  .put(validateObjectId, verifyTokenAndOnlyUser, updateUserProfile)
+  .delete(validateObjectId, verifyTokenAndAuthorization, deleteUserProfile);
 
 module.exports = router;
