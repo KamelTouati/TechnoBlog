@@ -22,6 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 // Routes should come after CORS middleware
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/users", require("./routes/usersRoutes"));
+app.use("/api/posts", require("./routes/postsRoute"));
 
 
 const PORT = process.env.PORT || 5000;
