@@ -13,7 +13,7 @@ const {
  * @access  private (only admin)
  ------------------------------------------------*/
 module.exports.getAllUsers = asyncHandler(async (req, res) => {
-  const users = await User.find().select("-password");
+  const users = await User.find().select("-password").populate("posts");
   res.status(200).json(users);
 });
 
@@ -24,7 +24,9 @@ module.exports.getAllUsers = asyncHandler(async (req, res) => {
  * @access  public
  ------------------------------------------------*/
 module.exports.getUserProfile = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.params.id).select("-password");
+  const user = await User.findById(req.params.id)
+    .select("-password")
+    .populate("posts");
 
   if (!user) {
     return res.status(404).json({ message: "user not found" });
