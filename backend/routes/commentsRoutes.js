@@ -3,6 +3,7 @@ const {
   createComment,
   getAllComments,
   deleteComment,
+  updateComment,
 } = require("../controllers/commentsController");
 const {
   verifyToken,
@@ -14,7 +15,8 @@ const validateObjectId = require("../middlewares/validateObjectId");
 router
   .route("/")
   .post(verifyToken, createComment)
-  .get(verifyTokenAndAdmin, getAllComments);
+  .get(verifyTokenAndAdmin, getAllComments)
+  .put(validateObjectId, verifyToken, updateComment);
 
 // /api/comments/:id
 router.route("/:id").delete(validateObjectId, verifyToken, deleteComment);
