@@ -23,6 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/users", require("./routes/usersRoutes"));
 app.use("/api/posts", require("./routes/postsRoute"));
+app.use("/api/comments", require("./routes/commentsRoute"));
 
 
 const PORT = process.env.PORT || 5000;
