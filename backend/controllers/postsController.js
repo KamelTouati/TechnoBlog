@@ -86,9 +86,9 @@ module.exports.getAllPosts = asyncHandler(async (req, res) => {
  * @access  public
  ------------------------------------------------*/
 module.exports.getSinglePost = asyncHandler(async (req, res) => {
-  const post = await Post.findById(req.params.id).populate("user", [
-    "-password",
-  ]);
+  const post = await Post.findById(req.params.id)
+    .populate("user", ["-password"])
+    .populate("comments");
 
   if (!post) {
     return res.status(404).json({ message: "post not found" });
@@ -123,6 +123,9 @@ module.exports.deletePost = asyncHandler(async (req, res) => {
   if (req.user.isAdmin || req.user.id === post.user.toString()) {
     await Post.findByIdAndDelete(req.params.id);
     await cloudinaryRemoveImage(post.image.publicId);
+
+    // Delete all comments that belong to this post
+    await Comment.deleteMany({ postId: post._id });
 
     res.status(200).json({
       message: "post has been deleted successfully",
@@ -170,8 +173,7 @@ module.exports.updatePost = asyncHandler(async (req, res) => {
       },
     },
     { new: true }
-  )
-    .populate("user", ["-password"])
+  ).populate("user", ["-password"]);
 
   // 5. Send response to the client
   res.status(200).json(updatedPost);
