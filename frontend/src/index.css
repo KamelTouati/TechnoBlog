@@ -8,4 +8,8 @@
 
 :root {
   font-family: "Raleway", sans-serif;
+  --bgColor: "#f9f9f9";
+  --color1: "#1c5cff";
+  --color2: "#3d74ff";
+  background-color: var(--bgColor);
 }

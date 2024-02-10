@@ -8,6 +8,12 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        bgColor: "#f9f9f9",
+        color1: "#1c5cff",
+        color2: "#3d74ff",
+        color3: "#779dff",
+      },
     },
   },
   plugins: [require("flowbite/plugin")],
