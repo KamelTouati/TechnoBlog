@@ -19,7 +19,7 @@ const ForgotPassword = () => {
     <div className="bg-bgColor">
       <div class="rounded-[2.5rem] flex justify-around items-around relative">
         <div>
-          <h1 className="text-3xl bg-gradient-to-r from-purple-600 to-blue-500 py-10 text-transparent bg-clip-text">
+          <h1 className="text-3xl font-medium bg-gradient-to-r from-purple-600 to-blue-500 py-10 text-transparent bg-clip-text">
             Forgot your password
           </h1>
           <form onSubmit={formSubmitHandler}>

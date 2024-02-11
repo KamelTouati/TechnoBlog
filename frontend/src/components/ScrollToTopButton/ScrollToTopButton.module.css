@@ -1,0 +1,23 @@
+.scrollButton {
+  position: fixed;
+  bottom: 20px;
+  right: 5px;
+  background: #1c5cff;
+  color: #fff;
+  border: none;
+  border-radius: 4.7px;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.scrollButton.visible {
+  opacity: 1;
+  z-index: 100;
+}

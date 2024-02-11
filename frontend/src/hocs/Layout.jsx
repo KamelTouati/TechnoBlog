@@ -1,9 +1,10 @@
 import React from "react";
-import { Navbar, Footer } from "../components";
+import { Navbar, Footer, ScrollToTopButton } from "../components";
 
 const Layout = ({ children }) => {
   return (
     <>
+      <ScrollToTopButton />
       <Navbar />
       {children}
       <Footer />

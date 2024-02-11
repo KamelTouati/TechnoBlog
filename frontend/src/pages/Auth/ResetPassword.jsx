@@ -33,7 +33,7 @@ const ResetPassword = () => {
           <h1>Not Found</h1>
         ) : (
           <div>
-            <h1 className="text-3xl bg-gradient-to-r from-purple-600 to-blue-500 py-10 text-transparent bg-clip-text">
+            <h1 className="text-3xl font-medium bg-gradient-to-r from-purple-600 to-blue-500 py-10 text-transparent bg-clip-text">
               Reset your password
             </h1>
             <form onSubmit={formSubmitHandler}>

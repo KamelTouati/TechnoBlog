@@ -25,23 +25,23 @@ const Login = () => {
     <div className="bg-bgColor">
       <div class="rounded-[2.5rem] flex justify-around items-around relative">
         <div>
-          <h1 className="text-3xl bg-gradient-to-r from-purple-600 to-blue-500 py-10 text-transparent bg-clip-text">
+          <h1 className="text-3xl font-medium bg-gradient-to-r from-purple-600 to-blue-500 py-10 text-transparent bg-clip-text">
             Log in to your account
           </h1>
           <form onSubmit={formSubmitHandler}>
             <div className="mb-6">
               <label
-                htmlFor="username"
+                htmlFor="email"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
-                Your username
+                Your email
               </label>
               <input
                 type="text"
-                id="username"
+                id="email"
                 className="inputStyle bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-[4.7px] focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="username"
-                name="username"
+                placeholder="email"
+                name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -85,7 +85,7 @@ const Login = () => {
             <Link to="/forgot-password">
               <span className="bg-gradient-to-r from-purple-600 to-blue-500 text-transparent bg-clip-text px-1">
                 {" "}
-                Frogot Password
+                Click Here
               </span>
             </Link>
           </p>

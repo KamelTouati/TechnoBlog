@@ -41,7 +41,7 @@ const Signup = () => {
     <div className="bg-bgColor">
       <div class="flex justify-around items-around relative">
         <div>
-          <h1 className="text-3xl bg-gradient-to-r from-purple-600 to-blue-500 py-10 text-transparent bg-clip-text">
+          <h1 className="text-3xl font-medium bg-gradient-to-r from-purple-600 to-blue-500 py-10 text-transparent bg-clip-text">
             Join Us Today: Create Your Account
           </h1>
           <form onSubmit={formSubmitHandler}>
@@ -119,7 +119,7 @@ const Signup = () => {
             <Link to="/forgot-password">
               <span className="bg-gradient-to-r from-purple-600 to-blue-500 text-transparent bg-clip-text px-1">
                 {" "}
-                Frogot Password
+                Click Here
               </span>
             </Link>
           </p>
