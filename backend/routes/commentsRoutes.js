@@ -20,3 +20,5 @@ router
 
 // /api/comments/:id
 router.route("/:id").delete(validateObjectId, verifyToken, deleteComment);
+
+module.exports = router;

@@ -1,5 +1,5 @@
 import AdminSidebar from "./components/AdminSidebar";
-import "./admin-table.css";
+import "./adminTable.css";
 import { Link } from "react-router-dom";
 import swal from "sweetalert";
 import { useDispatch, useSelector } from "react-redux";

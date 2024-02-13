@@ -4,7 +4,7 @@ const {
   validateCreateComment,
   validateUpdateComment,
 } = require("../models/commentModel");
-const { User } = require("../models/User");
+const { User } = require("../models/userModel");
 
 /**-----------------------------------------------
  * @desc    Create New Comment

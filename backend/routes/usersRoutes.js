@@ -11,8 +11,10 @@ const {
   verifyToken,
   verifyTokenAndAdmin,
   verifyTokenAndOnlyUser,
+  verifyTokenAndAuthorization,
 } = require("../middlewares/verifyToken");
 const validateObjectId = require("../middlewares/validateObjectId");
+const photoUpload = require("../middlewares/photoUpload");
 
 // /api/users/profile
 router.route("/profile").get(verifyTokenAndAdmin, getAllUsers);

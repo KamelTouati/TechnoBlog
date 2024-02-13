@@ -7,7 +7,7 @@ const {
   validateUpdatePost,
 } = require("../models/postModel");
 const { cloudinaryUploadImage } = require("../utils/cloudinary");
-const { Comment } = require("../models/Comment");
+const { Comment } = require("../models/commentModel");
 
 /**-----------------------------------------------
  * @desc    Create New Post

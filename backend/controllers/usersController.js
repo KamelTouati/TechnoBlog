@@ -6,8 +6,8 @@ const {
   cloudinaryRemoveImage,
   cloudinaryRemoveMultipleImage,
 } = require("../utils/cloudinary");
-const { Comment } = require("../models/Comment");
-const { Post } = require("../models/Post");
+const { Comment } = require("../models/commentModel");
+const { Post } = require("../models/postModel");
 
 /**-----------------------------------------------
  * @desc    Get All Users Profile

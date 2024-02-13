@@ -11,6 +11,7 @@ const {
 } = require("../controllers/postsController");
 const photoUpload = require("../middlewares/photoUpload");
 const { verifyToken } = require("../middlewares/verifyToken");
+const validateObjectId = require("../middlewares/validateObjectId");
 
 // /api/posts
 router
