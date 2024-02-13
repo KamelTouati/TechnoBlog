@@ -133,15 +133,20 @@ module.exports.loginUser = asyncHandler(async (req, res) => {
  ------------------------------------------------*/
 module.exports.verifyUserAccount = asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.userId);
+  // const token = req.params.token;
+  
+  // console.log("user", user);
+  // console.log("token", token);
   if (!user) {
     return res.status(400).json({ message: "invalid link" });
   }
-
+  
   const verificationToken = await VerificationToken.findOne({
     userId: user._id,
     token: req.params.token,
   });
-
+  console.log("verificationToken", verificationToken);
+  
   if (!verificationToken) {
     return res.status(400).json({ message: "invalid link" });
   }

@@ -2,8 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { BsPostcard } from "react-icons/bs";
 import { IoLogInOutline } from "react-icons/io5";
+import { useSelector } from "react-redux";
+import { IoMdAddCircleOutline } from "react-icons/io";
 
 const Landing = () => {
+  const { user } = useSelector((state) => state.auth);
+
   return (
     <div className="bg-bgColor px-20 py-6 flex flex-col items-center">
       <div class="rounded-[2.5rem] flex justify-around items-around relative mb-6">
@@ -31,17 +35,35 @@ const Landing = () => {
                 <BsPostcard />
               </div>
             </Link>
-            <h1>or</h1>
-            <Link
-              to="/signup"
-              className="flex items-center gap-2 text-color2 bg-color4 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 focus:outline-none"
-              aria-current="page"
-            >
-              Create an account
-              <div className="bg-color2 rounded-[4.7px] p-1">
-                <IoLogInOutline className="text-white" />
-              </div>
-            </Link>
+            {!user ? (
+              <>
+                <h1>or</h1>
+                <Link
+                  to="/signup"
+                  className="flex items-center gap-2 text-color2 bg-color4 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 focus:outline-none"
+                  aria-current="page"
+                >
+                  Create an account
+                  <div className="bg-color2 rounded-[4.7px] p-1">
+                    <IoLogInOutline className="text-white" />
+                  </div>
+                </Link>
+              </>
+            ) : (
+              <>
+                <h1>or</h1>
+                <Link
+                  to="/posts/create-post"
+                  className="flex items-center gap-2 text-color2 bg-color4 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 focus:outline-none"
+                  aria-current="page"
+                >
+                  Create a new post
+                  <div className="bg-color2 rounded-[4.7px] p-1">
+                    <IoMdAddCircleOutline className="text-white" />
+                  </div>
+                </Link>
+              </>
+            )}
           </div>
         </div>
         <div>

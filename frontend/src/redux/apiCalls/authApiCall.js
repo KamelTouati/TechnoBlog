@@ -38,6 +38,8 @@ export function registerUser(user) {
 
 // Verify Email
 export function verifyEmail(userId,token) {
+  // console.log("userId: " + userId)
+  // console.log("token: " + token)
   return async (dispatch) => {
     try {
       await request.get(`/api/auth/${userId}/verify/${token}`);

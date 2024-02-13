@@ -1,5 +1,7 @@
 const asyncHandler = require("express-async-handler");
-const { User } = require("../models/userModel");
+const { User, validateUpdateUser } = require("../models/userModel");
+const bcrypt = require("bcryptjs");
+const path = require("path");
 const fs = require("fs");
 const {
   cloudinaryUploadImage,
@@ -65,7 +67,9 @@ module.exports.updateUserProfile = asyncHandler(async (req, res) => {
       },
     },
     { new: true }
-  ).select("-password");
+  )
+    .select("-password")
+    .populate("posts");
 
   res.status(200).json(updatedUser);
 });

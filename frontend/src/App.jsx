@@ -18,6 +18,7 @@ import {
   Landing,
   Posts,
   PostDetails,
+  CreatePost,
   Profile,
   VerifyEmail,
   NotFound,
@@ -66,6 +67,7 @@ export default function App() {
               element={user ? <Favorite /> : <Navigate to="/" />}
             />
             <Route path="details/:id" element={<PostDetails />} />
+            <Route path="create-post" element={<CreatePost />} />
           </Route>
           <Route path="admin-dashboard">
             <Route

@@ -21,12 +21,12 @@ export default function Footer() {
               <ul class="flex gap-4 text-color4 font-medium">
                 <li className="bg-white rounded-[4.7px] p-2">
                   <a href="#" class="hover:underline">
-                    <FaFacebookF />
+                    <FaFacebookF className="text-color2" />
                   </a>
                 </li>
                 <li className="bg-white rounded-[4.7px] p-2">
                   <a href="#" class="hover:underline">
-                    <FaInstagram />
+                    <FaInstagram className="text-color2" />
                   </a>
                 </li>
               </ul>

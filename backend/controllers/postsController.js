@@ -6,7 +6,10 @@ const {
   validateCreatePost,
   validateUpdatePost,
 } = require("../models/postModel");
-const { cloudinaryUploadImage } = require("../utils/cloudinary");
+const {
+  cloudinaryUploadImage,
+  cloudinaryRemoveImage,
+} = require("../utils/cloudinary");
 const { Comment } = require("../models/commentModel");
 
 /**-----------------------------------------------
@@ -33,9 +36,17 @@ module.exports.createPost = asyncHandler(async (req, res) => {
 
   // 4. Create new post and save it to DB
   const post = await Post.create({
-    title: req.body.title,
+    company: req.body.company,
+    model: req.body.model,
+    operatingSystem: req.body.operatingSystem,
+    processorCompany: req.body.processorCompany,
+    processorModel: req.body.processorModel,
+    graphicCard: req.body.graphicCard,
+    display: req.body.display,
+    memory: req.body.memory,
+    storage: req.body.storage,
     description: req.body.description,
-    category: req.body.category,
+    price: req.body.price,
     user: req.user.id,
     image: {
       url: result.secure_url,
@@ -57,14 +68,14 @@ module.exports.createPost = asyncHandler(async (req, res) => {
  * @access  public
  ------------------------------------------------*/
 module.exports.getAllPosts = asyncHandler(async (req, res) => {
-  const POST_PER_PAGE = 3;
+  const Post_PER_PAGE = 3;
   const { pageNumber, category } = req.query;
   let posts;
 
   if (pageNumber) {
     posts = await Post.find()
-      .skip((pageNumber - 1) * POST_PER_PAGE)
-      .limit(POST_PER_PAGE)
+      .skip((pageNumber - 1) * Post_PER_PAGE)
+      .limit(Post_PER_PAGE)
       .sort({ createdAt: -1 })
       .populate("user", ["-password"]);
   } else if (category) {
@@ -109,7 +120,7 @@ module.exports.getPostCount = asyncHandler(async (req, res) => {
 });
 
 /**-----------------------------------------------
- * @desc    Delete Post
+ * @desc    Delete post
  * @route   /api/posts/:id
  * @method  DELETE
  * @access  private (only admin or owner of the post)
@@ -137,7 +148,7 @@ module.exports.deletePost = asyncHandler(async (req, res) => {
 });
 
 /**-----------------------------------------------
- * @desc    Update Post
+ * @desc    Update post
  * @route   /api/posts/:id
  * @method  PUT
  * @access  private (only owner of the post)
@@ -167,13 +178,23 @@ module.exports.updatePost = asyncHandler(async (req, res) => {
     req.params.id,
     {
       $set: {
-        title: req.body.title,
+        company: req.body.company,
+        model: req.body.model,
+        operating_system: req.body.operating_system,
+        processor_company: req.body.processor_company,
+        processor_model: req.body.processor_model,
+        graphic_card: req.body.graphic_card,
+        display: req.body.display,
+        memory: req.body.memory,
+        storage: req.body.storage,
         description: req.body.description,
-        category: req.body.category,
+        price: req.body.price,
       },
     },
     { new: true }
-  ).populate("user", ["-password"]);
+  )
+    .populate("user", ["-password"])
+    .populate("comments");
 
   // 5. Send response to the client
   res.status(200).json(updatedPost);
@@ -264,6 +285,46 @@ module.exports.toggleLike = asyncHandler(async (req, res) => {
       postId,
       {
         $push: { likes: loggedInUser },
+      },
+      { new: true }
+    );
+  }
+
+  res.status(200).json(post);
+});
+
+/**-----------------------------------------------
+ * @desc    Toggle cart
+ * @route   /api/posts/cart/:id
+ * @method  PUT
+ * @access  private (only logged in user)
+ ------------------------------------------------*/
+module.exports.toggleCart = asyncHandler(async (req, res) => {
+  const loggedInUser = req.user.id;
+  const { id: postId } = req.params;
+
+  let post = await Post.findById(postId);
+  if (!post) {
+    return res.status(404).json({ message: "post not found" });
+  }
+
+  const isPostAlreadyAdded = post.cart.find(
+    (user) => user.toString() === loggedInUser
+  );
+
+  if (isPostAlreadyAdded) {
+    post = await Post.findByIdAndUpdate(
+      postId,
+      {
+        $pull: { cart: loggedInUser },
+      },
+      { new: true }
+    );
+  } else {
+    post = await Post.findByIdAndUpdate(
+      postId,
+      {
+        $push: { cart: loggedInUser },
       },
       { new: true }
     );
