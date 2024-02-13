@@ -34,12 +34,12 @@ const Landing = () => {
             <h1>or</h1>
             <Link
               to="/signup"
-              className="flex items-center gap-2 text-white bg-color1 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 focus:outline-none"
+              className="flex items-center gap-2 text-color2 bg-color4 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 focus:outline-none"
               aria-current="page"
             >
               Create an account
               <div className="bg-color2 rounded-[4.7px] p-1">
-                <IoLogInOutline />
+                <IoLogInOutline className="text-white" />
               </div>
             </Link>
           </div>

@@ -207,11 +207,11 @@ const Navbar = () => {
                   <li>
                     <Link
                       to="/posts"
-                      className="flex items-center gap-2 text-white bg-color2 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 me-2 mb-2 focus:outline-none"
+                      className="flex items-center gap-2 text-white bg-color3 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 me-2 mb-2 focus:outline-none"
                       aria-current="page"
                     >
                       Posts
-                      <div className="bg-color3 rounded-[4.7px] p-1">
+                      <div className="bg-color2 rounded-[4.7px] p-1">
                         <BsPostcard />
                       </div>
                     </Link>
@@ -225,12 +225,12 @@ const Navbar = () => {
                 <li>
                   <Link
                     to="/posts"
-                    className="flex items-center gap-2 text-white bg-color1 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 me-2 mb-2 focus:outline-none"
+                    className="flex items-center gap-2 text-color2 bg-color4 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 me-2 mb-2 focus:outline-none"
                     aria-current="page"
                   >
                     Posts
                     <div className="bg-color2 rounded-[4.7px] p-1">
-                      <BsPostcard />
+                      <BsPostcard className="text-white" />
                     </div>
                   </Link>
                 </li>
