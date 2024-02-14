@@ -1,5 +1,8 @@
 export { default as Navbar } from "./Navbar";
 export { default as Footer } from "./Footer";
+export { default as Sidebar } from "./Sidebar";
+export { default as Pagination } from "./pagination/Pagination";
+export { default as PostCard } from "./PostCard";
 export { default as AddComment } from "./comments/AddComment";
 export { default as CommentList } from "./comments/CommentList";
 export { default as UpdateCommentModal } from "./comments/UpdateCommentModal";

@@ -129,7 +129,7 @@ const Navbar = () => {
                 <Link
                   onClick={logoutHandler}
                   to="/"
-                  className="flex items-center gap-2 text-sm block py-2 pl-3 pr-4 md:m-2 md:text-white md:bg-color2 rounded-[4.7px] text-blue-700"
+                  className="flex items-center justify-between text-sm block py-2 pl-3 pr-3 md:m-2 md:text-white md:bg-color2 rounded-[4.7px] text-blue-700"
                   aria-current="page"
                 >
                   Logout
