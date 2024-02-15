@@ -52,7 +52,7 @@ tr:hover {
 .table-user-image {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: 4.7px;
   object-fit: cover;
 }
 
@@ -68,27 +68,18 @@ tr:hover {
   justify-content: space-around;
 }
 
-/* .table-button-group button {
-    border: none;
-    background-color: var(--green-color);
-    color: var(--white-color);
-    border-radius: 5px;
-    font-size: 17px;
-    font-weight: 500;
-    padding: 5px;
-    cursor: pointer;
-} */
-
 .table-button-group button:last-child {
   background-color: var(--red-color);
 }
 
 .table-button-group button:first-child:hover {
   background-color: rgb(0, 212, 0);
+  border-radius: 4.7px;
 }
 
 .table-button-group button:last-child:hover {
   background-color: red;
+  border-radius: 4.7px;
 }
 
 .table-button-group button a {

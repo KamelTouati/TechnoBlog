@@ -32,7 +32,7 @@ const CategoriesTable = () => {
   };
 
   return (
-    <section className="table-container">
+    <section className="table-container bg-bgColor">
       <AdminSidebar />
       <div className="table-wrapper">
         <h1 className="table-title">Categories</h1>

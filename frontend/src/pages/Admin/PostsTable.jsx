@@ -4,10 +4,7 @@ import { Link } from "react-router-dom";
 import swal from "sweetalert";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import {
-  getAllPosts,
-  deletePost,
-} from "../../redux/apiCalls/postApiCall";
+import { getAllPosts, deletePost } from "../../redux/apiCalls/postApiCall";
 
 const PostsTable = () => {
   const dispatch = useDispatch();
@@ -33,7 +30,7 @@ const PostsTable = () => {
   };
 
   return (
-    <section className="table-container">
+    <section className="table-container bg-bgColor">
       <AdminSidebar />
       <div className="table-wrapper">
         <h1 className="table-title">Posts</h1>
@@ -60,19 +57,14 @@ const PostsTable = () => {
                     <span className="table-username">{item.user.username}</span>
                   </div>
                 </td>
-                <td>
-                  {item.company}
-                  {item.model}
-                </td>
+                <td>{item.title}</td>
                 <td>
                   <div className="table-button-group">
-                    <button className="buttonStyle p-2">
-                      <Link to={`/posts/details/${item._id}`}>
-                        View Post
-                      </Link>
+                    <button className="p-2">
+                      <Link to={`/posts/details/${item._id}`}>View Post</Link>
                     </button>
                     <button
-                      className="buttonStyle p-2"
+                      className="p-2"
                       onClick={() => deletePostHandler(item._id)}
                     >
                       Delete Post
