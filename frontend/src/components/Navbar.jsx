@@ -8,6 +8,7 @@ import { BsPostcard } from "react-icons/bs";
 import { IoMdAddCircleOutline } from "react-icons/io";
 import { FaRegHeart } from "react-icons/fa";
 import { CiSettings } from "react-icons/ci";
+import { MdOutlineAdminPanelSettings } from "react-icons/md";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -34,8 +35,20 @@ const Navbar = () => {
     <Fragment>
       <li>
         <Link
+          to="/posts"
+          className="flex items-center gap-2 text-color2 bg-color4 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 focus:outline-none"
+          aria-current="page"
+        >
+          Posts
+          <div className="bg-color2 rounded-[4.7px] p-1">
+            <BsPostcard className="text-white" />
+          </div>
+        </Link>
+      </li>
+      <li>
+        <Link
           to="/login"
-          className="flex items-center gap-2 text-white bg-color1 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 me-2 mb-2 focus:outline-none"
+          className="flex items-center gap-2 text-white bg-color1 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2  focus:outline-none"
           aria-current="page"
         >
           Login
@@ -190,7 +203,7 @@ const Navbar = () => {
         >
           Admin Dashboard
           <div className="bg-color2 rounded-[4.7px] p-1">
-            <FaRegHeart className="text-white" />
+            <MdOutlineAdminPanelSettings className="text-white" />
           </div>
         </Link>
       </li>
@@ -222,7 +235,7 @@ const Navbar = () => {
               <span className="block text-sm text-gray-900">
                 <Link
                   to={`/profile/${user?._id}`}
-                  className="flex items-center gap-2 text-sm block py-2 pl-3 pr-4
+                  className="flex items-center justify-between text-sm block py-2 pl-3 pr-4
                         rounded-[4.7px] text-blue-700
                         "
                 >
@@ -295,43 +308,6 @@ const Navbar = () => {
           id="navbar-default"
         >
           <ul className="flex flex-col md:items-center justify-center p-4 md:p-0 mt-4 border border-gray-100 bg-gray-50 md:flex-row md:text-black font-bold  md:space-x-8 md:mt-0 md:border-0 md:bg-bgColor dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 ">
-            {user ? (
-              user.isAdmin ? (
-                <>
-                  <li>
-                    <Link
-                      to="/posts"
-                      className="flex items-center gap-2 text-white bg-color3 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 me-2 mb-2 focus:outline-none"
-                      aria-current="page"
-                    >
-                      Posts
-                      <div className="bg-color2 rounded-[4.7px] p-1">
-                        <BsPostcard />
-                      </div>
-                    </Link>
-                  </li>
-                </>
-              ) : (
-                ""
-              )
-            ) : (
-              <>
-                <li>
-                  <Link
-                    to="/posts"
-                    className="flex items-center gap-2 text-color2 bg-color4 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 me-2 mb-2 focus:outline-none"
-                    aria-current="page"
-                  >
-                    Posts
-                    <div className="bg-color2 rounded-[4.7px] p-1">
-                      <BsPostcard className="text-white" />
-                    </div>
-                  </Link>
-                </li>
-              </>
-            )}
-            {/* {user ? "" : guestLinks()} */}
-
             {user
               ? user.isAdmin
                 ? adminUserLinks()

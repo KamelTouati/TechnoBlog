@@ -23,21 +23,20 @@ const Posts = () => {
   }, []);
 
   return (
-    <div className="bg-bgColor">
+    <div className="bg-bgColor flex">
       <Sidebar />
-      {/* {posts.map((post) => (
-        <PostCard key={post._id} post={post} />
-      ))} */}
-      <div class="p-4 sm:ml-64">
-        <PostCard />
-        <PostCard />
-        <PostCard />
+      <div className="w-full">
+        <div class="p-4">
+          {posts.map((post) => (
+            <PostCard key={post._id} post={post} />
+          ))}
+        </div>
+        <Pagination
+          pages={pages}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
       </div>
-      <Pagination
-        pages={pages}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-      />
     </div>
   );
 };
