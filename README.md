@@ -66,20 +66,20 @@ npm run app
 
 ## Screenshots
 
-![Screenshot](Screenshots/(1).png)
-![Screenshot](Screenshots/(2).png)
-![Screenshot](Screenshots/(3).png)
-![Screenshot](Screenshots/(4).png)
-![Screenshot](Screenshots/(5).png)
-![Screenshot](Screenshots/(6).png)
-![Screenshot](Screenshots/(7).png)
-![Screenshot](Screenshots/(8).png)
-![Screenshot](Screenshots/(9).png)
-![Screenshot](Screenshots/(10).png)
-![Screenshot](Screenshots/(11).png)
-![Screenshot](Screenshots/(12).png)
-![Screenshot](Screenshots/(13).png)
-![Screenshot](Screenshots/(14).png)
+![alt text](https://github.com/KamelTouati/TechnoBlog/blob/main/Screenshots/%20(1).png)
+![alt text](https://github.com/KamelTouati/TechnoBlog/blob/main/Screenshots/%20(2).png)
+![alt text](https://github.com/KamelTouati/TechnoBlog/blob/main/Screenshots/%20(3).png)
+![alt text](https://github.com/KamelTouati/TechnoBlog/blob/main/Screenshots/%20(4).png)
+![alt text](https://github.com/KamelTouati/TechnoBlog/blob/main/Screenshots/%20(5).png)
+![alt text](https://github.com/KamelTouati/TechnoBlog/blob/main/Screenshots/%20(6).png)
+![alt text](https://github.com/KamelTouati/TechnoBlog/blob/main/Screenshots/%20(7).png)
+![alt text](https://github.com/KamelTouati/TechnoBlog/blob/main/Screenshots/%20(8).png)
+![alt text](https://github.com/KamelTouati/TechnoBlog/blob/main/Screenshots/%20(9).png)
+![alt text](https://github.com/KamelTouati/TechnoBlog/blob/main/Screenshots/%20(10).png)
+![alt text](https://github.com/KamelTouati/TechnoBlog/blob/main/Screenshots/%20(11).png)
+![alt text](https://github.com/KamelTouati/TechnoBlog/blob/main/Screenshots/%20(12).png)
+![alt text](https://github.com/KamelTouati/TechnoBlog/blob/main/Screenshots/%20(13).png)
+![alt text](https://github.com/KamelTouati/TechnoBlog/blob/main/Screenshots/%20(14).png)
 
 ## Usage
 
