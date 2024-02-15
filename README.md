@@ -66,20 +66,20 @@ npm run app
 
 ## Screenshots
 
-![website interface0](<Screenshots/(1).png>)
-![website interface0](<Screenshots/(2).png>)
-![website interface0](<Screenshots/(3).png>)
-![website interface0](<Screenshots/(4).png>)
-![website interface0](<Screenshots/(5).png>)
-![website interface0](<Screenshots/(6).png>)
-![website interface0](<Screenshots/(7).png>)
-![website interface0](<Screenshots/(8).png>)
-![website interface0](<Screenshots/(9).png>)
-![website interface0](<Screenshots/(10).png>)
-![website interface0](<Screenshots/(11).png>)
-![website interface0](<Screenshots/(12).png>)
-![website interface0](<Screenshots/(13).png>)
-![website interface0](<Screenshots/(14).png>)
+![website interface0](Screenshots/(1).png)
+![website interface0](Screenshots/(2).png)
+![website interface0](Screenshots/(3).png)
+![website interface0](Screenshots/(4).png)
+![website interface0](Screenshots/(5).png)
+![website interface0](Screenshots/(6).png)
+![website interface0](Screenshots/(7).png)
+![website interface0](Screenshots/(8).png)
+![website interface0](Screenshots/(9).png)
+![website interface0](Screenshots/(10).png)
+![website interface0](Screenshots/(11).png)
+![website interface0](Screenshots/(12).png)
+![website interface0](Screenshots/(13).png)
+![website interface0](Screenshots/(14).png)
 
 ## Usage
 
