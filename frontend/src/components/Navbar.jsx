@@ -110,7 +110,7 @@ const Navbar = () => {
           >
             <span className="sr-only">Open user menu</span>
             <img
-              className="w-[30px] h-full rounded-[4.7px]"
+              className="w-[30px] h-[30px] rounded-[4.7px]"
               src={user.profilePhoto.url}
               alt=""
             />
@@ -220,7 +220,7 @@ const Navbar = () => {
           >
             <span className="sr-only">Open user menu</span>
             <img
-              className="w-[30px] h-full rounded-[4.7px]"
+              className="w-[30px] h-[30px] rounded-[4.7px]"
               src={user.profilePhoto.url}
               alt=""
             />

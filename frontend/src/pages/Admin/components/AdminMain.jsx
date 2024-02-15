@@ -22,7 +22,7 @@ const AdminMain = () => {
   }, []);
 
   return (
-    <div className="amdin-main">
+    <div className="amdin-main bg-bgColor">
       <div className="admin-main-header">
         <div className="admin-main-card">
           <h5 className="admin-card-title">Users</h5>
@@ -40,10 +40,7 @@ const AdminMain = () => {
           <h5 className="admin-card-title">Posts</h5>
           <div className="admin-card-count">{postsCount}</div>
           <div className="admin-card-link-wrapper">
-            <Link
-              to="/admin-dashboard/posts-table"
-              className="admin-card-link"
-            >
+            <Link to="/admin-dashboard/posts-table" className="admin-card-link">
               See all posts
             </Link>
             <div className="admin-card-icon">

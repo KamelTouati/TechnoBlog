@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./updateProfileModal.css";
 import { useDispatch } from "react-redux";
 import { updateProfile } from "../../redux/apiCalls/profileApiCall";
+import { MdModeEdit } from "react-icons/md";
+import { IoIosCloseCircleOutline } from "react-icons/io";
 
 const UpdateProfileModal = ({ setUpdateProfile, profile }) => {
   const dispatch = useDispatch();
@@ -27,13 +29,21 @@ const UpdateProfileModal = ({ setUpdateProfile, profile }) => {
   return (
     <div className="update-profile">
       <form onSubmit={formSubmitHandler} className="update-profile-form">
-        <abbr title="close">
-          <i
-            onClick={() => setUpdateProfile(false)}
-            className="bi bi-x-circle-fill update-profile-form-close"
-          ></i>
-        </abbr>
-        <h1 className="update-profile-title">Update Your Profile</h1>
+        <div className="flex justify-between">
+          <h1 className="text-xl font-medium bg-gradient-to-r from-purple-600 to-blue-500 my-2 text-transparent bg-clip-text">
+            Update Your Profile
+          </h1>
+          <abbr
+            title="close"
+            className="flex items-center gap-2 w-fit cursor-pointer text-white bg-color1 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm p-1  focus:outline-none"
+          >
+            <div className="bg-color2 rounded-[4.7px] p-1">
+              <IoIosCloseCircleOutline
+                onClick={() => setUpdateProfile(false)}
+              />
+            </div>
+          </abbr>
+        </div>
         <input
           type="text"
           className="update-profile-input"
@@ -55,8 +65,14 @@ const UpdateProfileModal = ({ setUpdateProfile, profile }) => {
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
-        <button type="submit" className="update-profile-btn">
-          Update Profile
+        <button
+          type="submit"
+          className="flex items-center gap-2 w-fit text-white bg-color1 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2  focus:outline-none"
+        >
+          Update
+          <div className="bg-color2 rounded-[4.7px] p-1">
+            <MdModeEdit />
+          </div>
         </button>
       </form>
     </div>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const AdminSidebar = () => {
   return (
-    <div className="admin-sidebar">
+    <div className="admin-sidebar bg-bgColor">
       <Link to="/admin-dashboard" className="admin-sidebar-title">
         <i className="bi bi-columns"></i>
         Dashboard
@@ -12,10 +12,7 @@ const AdminSidebar = () => {
           <i className="bi bi-person"></i>
           Users
         </Link>
-        <Link
-          className="admin-sidebar-link"
-          to="/admin-dashboard/posts-table"
-        >
+        <Link className="admin-sidebar-link" to="/admin-dashboard/posts-table">
           <i className="bi bi-file-post"></i>
           Posts
         </Link>

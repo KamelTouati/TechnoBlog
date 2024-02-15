@@ -36,27 +36,21 @@ const CommentList = ({ comments }) => {
   };
 
   return (
-    <div className="w-1/2 m-10">
+    <div>
       <h1 className="text-xl font-bold text-color3 py-2">
-        Product reviews {comments?.length}
+        Post reviews {comments?.length}
       </h1>
       <div className="flex flex-col">
         {comments?.map((comment) => (
           <div
             key={comment._id}
-            class="w-full rounded-[0.5rem] borderStyle p-1"
+            class="w-full rounded-[4.7px] borderStyle p-1 border border-gray-300"
           >
-            <div class="flex flex-col w-full rounded-[0.5rem] bg-white">
-              <div class=" w-full rounded-[0.5rem] flex flex-col justify-center relative p-5">
+            <div class="flex flex-col w-full rounded-[4.7px] bg-white">
+              <div class=" w-full rounded-[4.7px] flex flex-col justify-center relative p-5">
                 <div className="flex gap-1 items-center text-color3 font-bold">
                   <FaUserAlt />
                   <h1>{comment?.username}</h1>
-                  {/* <div>
-                    <Moment fromNow ago>
-                      {comment.createdAt}
-                    </Moment>{" "}
-                    ago
-                  </div> */}
                 </div>
                 {comment?.text}
               </div>
@@ -64,15 +58,19 @@ const CommentList = ({ comments }) => {
                 <div className="flex justify-end gap-4 my-4">
                   <div
                     onClick={() => updateCommentHandler(comment)}
-                    className="buttonStyle px-5 py-2"
+                    className="w-fit text-sm cursor-pointer block p-1 md:text-white md:bg-color2 rounded-[4.7px] text-blue-700"
                   >
-                    <MdModeEdit />
+                    <div className="w-fit bg-color3 rounded-[4.7px] p-1">
+                      <MdModeEdit />
+                    </div>
                   </div>
                   <div
                     onClick={() => deleteCommentHandler(comment?._id)}
-                    className="buttonStyle px-5 py-2"
+                    className="w-fit text-sm cursor-pointer block p-1 md:text-white md:bg-color2 rounded-[4.7px] text-blue-700"
                   >
-                    <MdDelete />
+                    <div className="w-fit bg-color3 rounded-[4.7px] p-1">
+                      <MdDelete />
+                    </div>
                   </div>
                 </div>
               )}

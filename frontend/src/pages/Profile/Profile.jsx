@@ -134,7 +134,7 @@ const Profile = () => {
         )}
       </div>
       <div className="profile-posts-list">
-        <div class="p-4 grid grid-cols-1 gap-4">
+        <div class="p-4 grid grid-cols-1 gap-2">
           {profile?.posts?.map((post) => (
             <PostCard
               key={post._id}

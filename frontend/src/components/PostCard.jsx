@@ -9,21 +9,21 @@ const PostCard = ({ post }) => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
   return (
-    <div class="flex flex-col items-start bg-color4 rounded-[4.7px] m-4 md:flex-row w-[98%] p-4">
+    <div class="flex flex-col items-start bg-color4 rounded-[4.7px] m-2 md:flex-row w-[98%] p-4">
       <img
-        class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
+        class="object-cover w-full rounded-[4.7px] h-96 md:h-auto md:w-48"
         src={post?.image.url}
         alt=""
       />
-      <div class="flex flex-col justify-between p-4 leading-normal">
+      <div class="flex flex-col justify-between p-4 leading-normalrelative ">
         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           {post?.title}
         </h5>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 truncate w-[400px]">
           {post?.description}
         </p>
         <p>{post?.user.username}</p>
-
+        <span>{new Date(post?.createdAt).toDateString()}</span>
         <div className="flex gap-2">
           <Link
             to={`/posts/details/${post?._id}`}

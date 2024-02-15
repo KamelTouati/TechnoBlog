@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts, getPostsCount } from "../../redux/apiCalls/postApiCall";
 import { Sidebar, Pagination, PostCard } from "../../components";
 
-const Post_PER_PAGE = 3;
+const Post_PER_PAGE = 3;    
 
 const Posts = () => {
   const dispatch = useDispatch();

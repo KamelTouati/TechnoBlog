@@ -16,3 +16,4 @@ export { default as Favorite } from "./Favorite";
 export { default as Posts } from "./Post/Posts";
 export { default as PostDetails } from "./Post/PostDetails";
 export { default as CreatePost } from "./Post/CreatePost";
+export { default as Category } from "./Post/Category";

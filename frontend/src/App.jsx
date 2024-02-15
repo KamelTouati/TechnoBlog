@@ -17,6 +17,7 @@ import {
   Signup,
   Landing,
   Posts,
+  Category,
   PostDetails,
   CreatePost,
   Profile,
@@ -68,6 +69,7 @@ export default function App() {
             />
             <Route path="details/:id" element={<PostDetails />} />
             <Route path="create-post" element={<CreatePost />} />
+            <Route path="categories/:category" element={<Category />} />
           </Route>
           <Route path="admin-dashboard">
             <Route
