@@ -16,7 +16,7 @@ const AddComment = ({ postId }) => {
     setText("");
   };
   return (
-    <div className="w-1/2">
+    <div>
       <h1 className="text-xl font-bold text-color3 py-2">Add a comment</h1>
       <form onSubmit={formSubmitHandler}>
         <div className="mb-6">

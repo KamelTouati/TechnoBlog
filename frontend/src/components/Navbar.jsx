@@ -36,7 +36,7 @@ const Navbar = () => {
       <li>
         <Link
           to="/posts"
-          className="flex items-center gap-2 text-color2 bg-color4 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 focus:outline-none"
+          className="flex items-center md:gap-2 justify-between text-color2 bg-color4 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 focus:outline-none"
           aria-current="page"
         >
           Posts
@@ -48,7 +48,7 @@ const Navbar = () => {
       <li>
         <Link
           to="/login"
-          className="flex items-center gap-2 text-white bg-color1 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2  focus:outline-none"
+          className="flex items-center md:gap-2 justify-between text-white bg-color1 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2  focus:outline-none"
           aria-current="page"
         >
           Login
@@ -64,7 +64,7 @@ const Navbar = () => {
       <li>
         <Link
           to="/posts"
-          className="flex items-center gap-2 text-color2 bg-color4 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 focus:outline-none"
+          className="flex items-center md:gap-2 justify-between text-color2 bg-color4 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 focus:outline-none"
           aria-current="page"
         >
           Posts
@@ -76,7 +76,7 @@ const Navbar = () => {
       <li>
         <Link
           to="/posts/create-post"
-          className="flex items-center gap-2 text-color2 bg-color4 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 focus:outline-none"
+          className="flex items-center md:gap-2 justify-between text-color2 bg-color4 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 focus:outline-none"
           aria-current="page"
         >
           Create Post
@@ -88,7 +88,7 @@ const Navbar = () => {
       <li>
         <Link
           to="/posts/favorite-posts"
-          className="flex items-center gap-2 text-color2 bg-color4 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 focus:outline-none"
+          className="flex items-center md:gap-2 justify-between text-color2 bg-color4 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 focus:outline-none"
           aria-current="page"
         >
           Favorite Posts
@@ -125,7 +125,7 @@ const Navbar = () => {
               <span className="block text-sm text-gray-900">
                 <Link
                   to={`/profile/${user?._id}`}
-                  className="flex items-center gap-2 text-sm block py-2 pl-3 pr-4
+                  className="flex items-center md:gap-2 justify-between text-sm block py-2 pl-3 pr-4
                         rounded-[4.7px] text-blue-700
                         "
                 >
@@ -162,7 +162,7 @@ const Navbar = () => {
       <li>
         <Link
           to="/posts"
-          className="flex items-center gap-2 text-color2 bg-color4 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 focus:outline-none"
+          className="flex items-center md:gap-2 justify-between text-color2 bg-color4 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 focus:outline-none"
           aria-current="page"
         >
           Posts
@@ -174,7 +174,7 @@ const Navbar = () => {
       <li>
         <Link
           to="/posts/create-post"
-          className="flex items-center gap-2 text-color2 bg-color4 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 focus:outline-none"
+          className="flex items-center md:gap-2 justify-between text-color2 bg-color4 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 focus:outline-none"
           aria-current="page"
         >
           Create Post
@@ -186,7 +186,7 @@ const Navbar = () => {
       <li>
         <Link
           to="/posts/favorite-posts"
-          className="flex items-center gap-2 text-color2 bg-color4 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 focus:outline-none"
+          className="flex items-center md:gap-2 justify-between text-color2 bg-color4 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 focus:outline-none"
           aria-current="page"
         >
           Favorite Posts
@@ -198,7 +198,7 @@ const Navbar = () => {
       <li>
         <Link
           to="/admin-dashboard"
-          className="flex items-center gap-2 text-color2 bg-color4 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 focus:outline-none"
+          className="flex items-center md:gap-2 justify-between text-color2 bg-color4 focus:ring-4 focus:ring-blue-300 font-medium rounded-[4.7px] text-sm px-3 py-2 focus:outline-none"
           aria-current="page"
         >
           Admin Dashboard
@@ -252,7 +252,7 @@ const Navbar = () => {
                 <Link
                   onClick={logoutHandler}
                   to="/"
-                  className="flex items-center gap-2 text-sm block py-2 pl-3 pr-4 md:m-2 md:text-white md:bg-color2 rounded-[4.7px] text-blue-700"
+                  className="flex items-center md:gap-2 justify-between text-sm block py-2 pl-3 pr-4 md:m-2 md:text-white md:bg-color2 rounded-[4.7px] text-blue-700"
                   aria-current="page"
                 >
                   Logout

@@ -19,7 +19,7 @@ const PostCard = ({ post }) => {
         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           {post?.title}
         </h5>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 truncate w-[400px]">
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 truncate w-[200px] md:w-[350px] lg:w-[400px]">
           {post?.description}
         </p>
         <p>{post?.user.username}</p>

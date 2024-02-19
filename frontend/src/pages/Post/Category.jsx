@@ -20,7 +20,7 @@ const Category = () => {
 
   return (
     <section className="category">
-      <div className="bg-bgColor flex">
+      <div className="bg-bgColor flex sm:flex-row flex-col">
         <Sidebar />
         <div className="w-full">
           {postsCate.length === 0 ? (

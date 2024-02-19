@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts, getPostsCount } from "../../redux/apiCalls/postApiCall";
 import { Sidebar, Pagination, PostCard } from "../../components";
 
-const Post_PER_PAGE = 3;    
+const Post_PER_PAGE = 3;
 
 const Posts = () => {
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const Posts = () => {
   }, []);
 
   return (
-    <div className="bg-bgColor flex">
+    <div className="bg-bgColor flex sm:flex-row flex-col">
       <Sidebar />
       <div className="w-full">
         <div class="p-4">

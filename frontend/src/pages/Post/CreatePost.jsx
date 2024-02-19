@@ -48,7 +48,7 @@ const CreatePost = () => {
   }, []);
 
   return (
-    <div className="bg-bgColor flex">
+    <div className="bg-bgColor flex sm:flex-row flex-col">
       <Sidebar />
       <div class="p-4 w-full">
         <section>

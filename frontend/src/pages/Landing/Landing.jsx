@@ -9,9 +9,9 @@ const Landing = () => {
   const { user } = useSelector((state) => state.auth);
 
   return (
-    <div className="bg-bgColor px-20 py-6 flex flex-col items-center">
-      <div class="rounded-[2.5rem] flex justify-around items-around relative mb-6">
-        <div className="w-[40%]">
+    <div className="bg-bgColor px-5 md:px-20 py-6 flex flex-col items-center">
+      <div class="rounded-[2.5rem] flex md:flex-row flex-col justify-around items-around relative mb-6">
+        <div className="md:w-[40%] w-full">
           <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 py-4 text-transparent bg-clip-text">
             Welcome to TechnoBlog
             <br />
@@ -78,8 +78,8 @@ const Landing = () => {
         <div className="bg-color2 rounded-[4.7px] p-1 h-full w-full"></div>
       </div>
       {/*  */}
-      <div class="rounded-[2.5rem] flex justify-around items-around relative mb-6">
-        <div className="w-[40%]">
+      <div class="rounded-[2.5rem] flex md:flex-row flex-col justify-around items-around relative mb-6">
+        <div className="md:w-[40%] w-full">
           <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 py-4 text-transparent bg-clip-text">
             Explore the World of Tech Trends
           </h1>
@@ -107,11 +107,11 @@ const Landing = () => {
         <div className="bg-color2 rounded-[4.7px] p-1 h-full w-full"></div>
       </div>
       {/*  */}
-      <div class="rounded-[2.5rem] flex justify-around items-around relative mb-6 ">
+      <div class="rounded-[2.5rem] flex md:flex-row flex-col justify-around items-around relative mb-6 ">
         <div>
           <img className="w-[600px]" src="/assets/illustration5.svg" alt="" />
         </div>
-        <div className="w-[40%]">
+        <div className="md:w-[40%] w-full">
           <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 py-4 text-transparent bg-clip-text">
             Empowering Minds, Igniting Creativity:
           </h1>
@@ -136,8 +136,8 @@ const Landing = () => {
         <div className="bg-color2 rounded-[4.7px] p-1 h-full w-full"></div>
       </div>
       {/*  */}
-      <div class="rounded-[2.5rem] flex justify-around items-around relative my-6">
-        <div className="w-[40%]">
+      <div class="rounded-[2.5rem] flex md:flex-row flex-col justify-around items-around relative my-6">
+        <div className="md:w-[40%] w-full">
           <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 py-4 text-transparent bg-clip-text">
             Your Personalized Tech Hub:
           </h1>
