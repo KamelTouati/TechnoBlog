@@ -5,6 +5,7 @@ const connectDB = require("./config/connectToDb");
 const colors = require("colors");
 const dotenv = require("dotenv").config();
 const { errorHandler, notFound } = require("./middlewares/error");
+const xss = require("xss-clean");
 
 // Connection To Db
 connectDB();
@@ -19,6 +20,9 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions)); // Apply CORS middleware before other middleware
+
+// Prevent XSS(Cross Site Scripting) Attacks
+app.use(xss());
 
 app.use(express.json());
 app.use(cookieParser());
